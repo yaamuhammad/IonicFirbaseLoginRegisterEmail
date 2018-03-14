@@ -1,36 +1,24 @@
-
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>register</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title>register</ion-title>
+    </ion-navbar>
 </ion-header>
-
-
 <ion-content padding>
-
-<ion-list>
-
-  <ion-item>
-    <ion-label floating>Name</ion-label>
-    <ion-input type="text" [(ngModel)] = "credentials.name" ></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input type="email" [(ngModel)] = "credentials.email"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password" [(ngModel)] = "credentials.password"></ion-input>
-  </ion-item>
-
-  <ion-item text-center>
-  	<button ion-button round style="min-width: 200px; padding: 10px 16px" (click) = "register()">Register</button>
-  </ion-item>
-
-</ion-list>
-
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)] = "credentials.name" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)] = "credentials.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)] = "credentials.password"></ion-input>
+        </ion-item>
+        <ion-item text-center>
+            <button ion-button round style="min-width: 200px; padding: 10px 16px" (click) = "register()">Register</button>
+        </ion-item>
+    </ion-list>
 </ion-content>

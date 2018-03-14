@@ -5,35 +5,33 @@ import { AuthProvider } from '../../providers/auth/auth'
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+    selector: 'page-login',
+    templateUrl: 'login.html',
 })
 export class LoginPage {
-	credentials:any = {
-		email: '',
-		password: ''
-	}
-
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,
-  	          public authProvider: AuthProvider) {
-  }
-
-  ionViewDidLoad() {
-    if (localStorage.getItem("isLogin") == "true") {
-      this.navCtrl.setRoot(HomePage);
+    credentials: any = {
+        email: '',
+        password: ''
     }
-  }
 
-  login() {
-    this.authProvider.login(this.credentials).then((res: any) => {
-        this.navCtrl.setRoot(HomePage);
-    }).catch((err) => {
-    	alert(err.message);
-    });
-  }
+    constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,
+        public authProvider: AuthProvider) {}
 
-  register() {
-    this.navCtrl.push("RegisterPage")
-  }
+    ionViewDidLoad() {
+        if (localStorage.getItem("isLogin") == "true") {
+            this.navCtrl.setRoot(HomePage);
+        }
+    }
 
+    login() {
+        this.authProvider.login(this.credentials).then((res: any) => {
+            this.navCtrl.setRoot(HomePage);
+        }).catch((err) => {
+            alert(err.message);
+        });
+    }
+
+    register() {
+        this.navCtrl.push("RegisterPage")
+    }
 }
